@@ -4,7 +4,7 @@ bl_info = {
     "category": "Object",
     "version": (1, 0, 0),
     "author": "magician lib",
-    "description": "Show or hide axes for all objects and new objects",
+    "description": "Show or hide axes for all objects and new objects（显示或隐藏所有对象和新对象的坐标轴）",
 }
 
 import bpy
