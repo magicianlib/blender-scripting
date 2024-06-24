@@ -32,9 +32,9 @@ def on_object_add(scene, depsgraph):
             set_show_axis(update.id, axes_shown)
 
 
-class OBJECT_OT_toggle_axes(bpy.types.Operator):
+class ToggleObjectAxes(bpy.types.Operator):
     """Toggle axes display for all objects and new objects"""
-    bl_idname = "object.toggle_axes"
+    bl_id = "object.toggle_axes"
     bl_label = "Toggle Axes Display"
     bl_options = {'REGISTER', 'UNDO'}
 
@@ -55,34 +55,34 @@ class OBJECT_OT_toggle_axes(bpy.types.Operator):
         return {'FINISHED'}
 
 
-def get_menu_text():
+def i18n_menu_text():
     """
     i18n:
     Get the menu text based on the current language setting.
     """
     language = bpy.context.preferences.view.language
     if language.startswith('zh_'):
-        return ("隐藏物体轴向", "显示物体轴向")
+        return "隐藏物体轴向", "显示物体轴向"
     else:
-        return ("Hide Axes Display", "Show Axes Display")
+        return "Hide Axes Display", "Show Axes Display"
 
 
 def draw_toggle_axes_menu(self, context):
     global axes_shown
-    hide_text, show_text = get_menu_text()
+    hide_text, show_text = i18n_menu_text()
     if axes_shown:
-        self.layout.operator(OBJECT_OT_toggle_axes.bl_idname, text=hide_text)
+        self.layout.operator(ToggleObjectAxes.bl_id, text=hide_text)
     else:
-        self.layout.operator(OBJECT_OT_toggle_axes.bl_idname, text=show_text)
+        self.layout.operator(ToggleObjectAxes.bl_id, text=show_text)
 
 
 def register():
-    bpy.utils.register_class(OBJECT_OT_toggle_axes)
+    bpy.utils.register_class(ToggleObjectAxes)
     bpy.types.TOPBAR_MT_editor_menus.append(draw_toggle_axes_menu)
 
 
 def unregister():
-    bpy.utils.unregister_class(OBJECT_OT_toggle_axes)
+    bpy.utils.unregister_class(ToggleObjectAxes)
     bpy.types.TOPBAR_MT_editor_menus.remove(draw_toggle_axes_menu)
     if on_object_add in bpy.app.handlers.depsgraph_update_post:
         bpy.app.handlers.depsgraph_update_post.remove(on_object_add)
