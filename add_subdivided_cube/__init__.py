@@ -1,10 +1,10 @@
 bl_info = {
-    "name": "Add Subdivided Cube",
+    "name": "Add Subdivided Cube(细分立方体)",
     "blender": (3, 3, 0),
     "category": "Object",
     "version": (1, 0, 0),
     "author": "magician lib",
-    "description": "Add Subdivided Cube（创建自带细分立方体）",
+    "description": "Add Subdivided Cube(创建立方体体时设置细分)",
 }
 
 import bpy
