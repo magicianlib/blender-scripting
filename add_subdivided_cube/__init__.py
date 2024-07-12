@@ -32,7 +32,7 @@ def add_subdivided_cube(subdivisions):
         bpy.ops.mesh.subdivide(number_cuts=subdivisions - 1)
 
     # 退出编辑模式
-    bpy.ops.object.mode_set(mode='OBJECT')
+    # bpy.ops.object.mode_set(mode='OBJECT')
 
     # 返回新添加的立方体对象
     return obj
