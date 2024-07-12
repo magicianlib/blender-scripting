@@ -28,8 +28,6 @@ def add_subdivided_cube(subdivisions):
     if subdivisions > 1:
         bpy.ops.mesh.subdivide(number_cuts=subdivisions - 1)
 
-    print(f"subdivide: %s", bpy.ops.mesh.subdivide)
-
     # 退出编辑模式
     bpy.ops.object.mode_set(mode='OBJECT')
 
