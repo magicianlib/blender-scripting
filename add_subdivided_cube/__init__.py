@@ -11,8 +11,11 @@ import bpy
 
 
 def add_subdivided_cube(subdivisions):
-    # 创建一个新的立方体
-    bpy.ops.mesh.primitive_cube_add(size=2, location=(0, 0, 0))
+    # 获取游标位置
+    cursor_location = bpy.context.scene.cursor.location
+
+    # 创建一个新的立方体（使用游标位置）
+    bpy.ops.mesh.primitive_cube_add(size=2, location=cursor_location)
 
     # 获取新添加的立方体对象
     obj = bpy.context.active_object
