@@ -34,7 +34,7 @@ def on_object_add(scene, depsgraph):
 
 class ToggleObjectAxes(bpy.types.Operator):
     """Toggle axes display for all objects and new objects"""
-    bl_id = "object.toggle_axes"
+    bl_idname = "object.toggle_axes"
     bl_label = "Toggle Axes Display"
     bl_options = {'REGISTER', 'UNDO'}
 
@@ -71,9 +71,9 @@ def draw_toggle_axes_menu(self, context):
     global axes_shown
     hide_text, show_text = i18n_menu_text()
     if axes_shown:
-        self.layout.operator(ToggleObjectAxes.bl_id, text=hide_text)
+        self.layout.operator(ToggleObjectAxes.bl_idname, text=hide_text)
     else:
-        self.layout.operator(ToggleObjectAxes.bl_id, text=show_text)
+        self.layout.operator(ToggleObjectAxes.bl_idname, text=show_text)
 
 
 def register():
