@@ -1,6 +1,6 @@
 bl_info = {
     "name": "Add Subdivided Cube",
-    "blender": (2, 80, 0),
+    "blender": (3, 3, 0),
     "category": "Object",
     "version": (1, 0, 0),
     "author": "magician lib",
