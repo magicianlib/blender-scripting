@@ -1,5 +1,5 @@
 bl_info = {
-    "name": "Add Subdivided Cube(细分立方体)",
+    "name": "Add Subdivided Cube(创建细分立方体)",
     "blender": (3, 3, 0),
     "category": "Object",
     "version": (1, 0, 0),
@@ -45,9 +45,9 @@ def i18n_menu_text():
     """
     language = bpy.context.preferences.view.language
     if language.startswith('zh_'):
-        return "立方体(细分)"
+        return "立方体(并细分)"
     else:
-        return "Add Subdivided Cube"
+        return "Cube(Add Subdivided)"
 
 
 class OBJECT_OT_add_subdivided_cube(bpy.types.Operator):
